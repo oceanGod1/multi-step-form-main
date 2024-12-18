@@ -1,0 +1,31 @@
+.next-step {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  padding: 0.8rem 1.2rem;
+  color: var(--neutral1);
+  transition: 0.3s;
+  background-color: var(--color1);
+}
+
+.next-step:hover {
+  transform: scale(0.99);
+  background-color: hsl(213, 50%, 33%);
+}
+
+.next-step:active {
+  transform: scale(0.95);
+}
+
+.confirm-button {
+  background-color: var(--color2);
+}
+
+.confirm-button:hover {
+  background-color: var(--color3);
+}
+
+.confirm-button:active {
+  transform: scale(0.95);
+}

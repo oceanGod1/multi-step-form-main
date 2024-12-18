@@ -1,0 +1,70 @@
+.finishing-up {
+  gap: 1rem;
+  display: grid;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--color9);
+}
+
+.finishing-up .step2-result {
+  gap: 0.2rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+}
+
+.finishing-up h2 {
+  font-size: 0.8rem;
+}
+
+.finishing-up .confirm-plan-price {
+  grid-row: span 2;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.finishing-up a {
+  font-size: 0.8rem;
+  color: var(--color6);
+  text-decoration: underline;
+}
+
+.finishing-up .confirm-add-ons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.finishing-up .confirm-addon-heading,
+.total-heading {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--color6);
+}
+
+.finishing-up .confirm-addon-price {
+  font-size: 0.8rem;
+}
+
+.confirm-total {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem 1rem;
+  justify-content: space-between;
+}
+
+.total-price {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color2);
+}
+
+.final-instruction {
+  left: 50%;
+  font-size: 0.9rem;
+  position: absolute;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--neutral1);
+  transform: translateX(-50%);
+  background-color: var(--error);
+}

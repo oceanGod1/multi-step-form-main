@@ -1,0 +1,28 @@
+.primry-nav-card {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  display: grid;
+  position: absolute;
+  background-color: var(--neutral1);
+  grid-template-columns: minmax(1rem, 1fr) minmax(auto, 38rem) minmax(1rem, 1fr);
+}
+
+.primry-nav-card nav {
+  display: flex;
+  grid-column: 2/3;
+  align-items: center;
+}
+
+@media (min-width: 62rem) {
+  .primry-nav-card {
+    padding-inline: 1rem;
+    grid-template-columns: 15rem 1fr 1fr;
+  }
+
+  .primry-nav-card nav {
+    grid-column: 2/4;
+    padding-inline: 5rem 4rem;
+  }
+}

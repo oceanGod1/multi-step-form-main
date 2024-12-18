@@ -1,0 +1,33 @@
+.thank-you {
+  gap: 0.5rem;
+  display: grid;
+  padding-inline: 1px;
+  padding-block: 2rem;
+  justify-items: center;
+}
+.thank-you img {
+  width: 3rem;
+}
+
+.thank-you h2 {
+  margin-top: 1rem;
+}
+
+.thank-you p {
+  text-align: center;
+  line-height: 1.5rem;
+  color: var(--color6);
+}
+
+@media (min-width: 62rem) {
+  .thank-you {
+    padding-top: 6.5rem;
+    padding-inline: 0.5rem;
+  }
+  .thank-you img {
+    width: 3.5rem;
+  }
+  .thank-you p {
+    font-size: 0.9rem;
+  }
+}

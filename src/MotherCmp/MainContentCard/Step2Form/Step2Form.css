@@ -1,0 +1,50 @@
+.step2-form {
+  gap: 0.8rem;
+  display: grid;
+  list-style: none;
+}
+
+.step2-form .toggle-duration-card {
+  border: none;
+  display: flex;
+  height: 2.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  justify-content: center;
+  background-color: var(--color9);
+}
+
+.step2-form input[type="range"] {
+  width: 2rem;
+  outline: none;
+  height: 1.1rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  appearance: none;
+  margin-inline: 1rem;
+  border-radius: 0.55rem;
+  background-color: var(--color1);
+}
+
+.step2-form input[type="range"]::-webkit-slider-thumb {
+  width: 0.6rem;
+  height: 0.6rem;
+  appearance: none;
+  border-radius: 50%;
+  background-color: var(--neutral1);
+}
+
+@media (min-width: 62rem) {
+  .step2-form {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 0.8rem;
+    list-style: none;
+  }
+
+  .step2-form .toggle-duration-card {
+    grid-column: span 3;
+  }
+}
