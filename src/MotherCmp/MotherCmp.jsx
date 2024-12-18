@@ -31,7 +31,6 @@ export default function MotherCmp() {
       <MainContentCard
         count={count}
         step1Done={step1Done}
-        userDetails={userDetails}
         setUserDetails={setUserDetails}
         isMonth={isMonth}
         setIsMonth={setIsMonth}

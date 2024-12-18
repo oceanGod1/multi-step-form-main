@@ -1,12 +1,13 @@
 .main-content-card {
   display: grid;
   row-gap: 1rem;
+  overflow: auto;
   padding: 1.5rem;
   grid-column: 2/2;
   border-radius: 0.5rem;
   transform: translateY(-4.2rem);
+  max-height: calc(100vh - 11.5rem);
   background-color: var(--neutral1);
-  /* border: 1px solid red; */
 }
 
 @media (min-width: 62rem) {

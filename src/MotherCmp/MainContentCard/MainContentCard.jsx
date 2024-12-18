@@ -36,7 +36,6 @@ const headingProperties = [
 export default function MainContentCard({
   count,
   step1Done,
-  userDetails,
   setUserDetails,
   isMonth,
   setIsMonth,
