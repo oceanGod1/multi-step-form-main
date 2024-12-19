@@ -145,7 +145,7 @@ export default function MainContentCard({
       return {
         ...a,
         [e.target.name]: {
-          ...currAddOn[e.target.name],
+          ...a[e.target.name],
           status: !pickAddOn[e.target.name].status,
           heading: e.target.nextElementSibling.innerText,
           price: !pickAddOn[e.target.name].status
