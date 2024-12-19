@@ -9,18 +9,16 @@ export default function SecondaryNav({ count }) {
     { id: 104, stepTitle: "SUMMARY" },
   ];
 
-  // find the index of the steps array, and match it with the index of the renderd component
-  const stepNumIdx = stepId => steps.findIndex(val => val.id === stepId);
-
   return (
     <ul className="secondary-nav">
-      {steps.map(({ id, stepTitle }) => {
+      {steps.map((item, idx) => {
+        const { id, stepTitle } = item;
         return (
           <CurrentStep
             key={id}
-            stepNum={stepNumIdx(id) + 1}
+            stepNum={idx + 1}
             stepTitle={stepTitle}
-            isActive={stepNumIdx(id) === (count <= 4 ? count - 1 : 3)}
+            isActive={idx === (count <= 4 ? count - 1 : 3)}
           />
         );
       })}

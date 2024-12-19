@@ -2,12 +2,12 @@ import "./FinishingUp.css";
 
 export default function FinishingUp({
   total,
-  count,
   value,
   price,
   duration,
   pickAddOn,
   handleClick,
+  userDetails,
 }) {
   const selectedAddon = Object.values(pickAddOn).map(
     ({ status, heading, price }) =>
@@ -34,7 +34,11 @@ export default function FinishingUp({
             ${price}
             {duration && `/${duration}`}
           </p>
-          <a href="#" onClick={handleClick}>
+          <a
+            href="#"
+            onClick={handleClick}
+            className={`${userDetails.noPlanSelected && "change-plan"}`}
+          >
             Change
           </a>
         </div>
@@ -49,9 +53,13 @@ export default function FinishingUp({
           ${Object.values(total).reduce((acc, val) => acc + val)}
           {duration && `/${duration}`}
         </p>
-        {count === 4 && value === "No plan selected" && (
-          <p className="final-instruction">Please select a plan</p>
-        )}
+        <p
+          className={`final-instruction ${
+            userDetails.noPlanSelected && "final-instruction-visible"
+          }`}
+        >
+          Please select a plan
+        </p>
       </div>
     </>
   );

@@ -40,6 +40,7 @@ export default function MainContentCard({
   isMonth,
   setIsMonth,
   setCount,
+  userDetails,
 }) {
   // DESTRUCTURE ALL THE NECESSARY USESTATE AND EFFECTS
   // useState for the input fields in step 1
@@ -73,9 +74,9 @@ export default function MainContentCard({
 
   // useEffect for the final user's data.
   useEffect(() => {
-    setUserDetails(currUserDetail => {
+    setUserDetails(u => {
       return {
-        ...currUserDetail,
+        ...u,
         userPersonalInfo: userPersonalInfo,
         userPlan: userPlan,
         pickAddOn: pickAddOn,
@@ -85,9 +86,9 @@ export default function MainContentCard({
   }, [userPersonalInfo, userPlan, pickAddOn, total]);
 
   useEffect(() => {
-    setUserPlan(currPlan => {
+    setUserPlan(uP => {
       return {
-        ...currPlan,
+        ...uP,
         value: "No plan selected",
         duration: null,
         price: 0,
@@ -101,9 +102,9 @@ export default function MainContentCard({
   }, [isMonth]);
 
   useEffect(() => {
-    setTotal(currTotal => {
+    setTotal(t => {
       return {
-        ...currTotal,
+        ...t,
         planPrice: Number(userPlan.price),
         addon1: Number(pickAddOn.onlineService.price),
         addon2: Number(pickAddOn.largerStorage.price),
@@ -115,8 +116,8 @@ export default function MainContentCard({
   // EVENT HANDLERS FOR ALL DESTRUCTURED STATES
   // event handler for the step 1 input fields
   const handleStep1Change = e => {
-    return setUserPersonalInfo(currValue => {
-      return { ...currValue, [e.target.name]: e.target.value };
+    return setUserPersonalInfo(v => {
+      return { ...v, [e.target.name]: e.target.value };
     });
   };
 
@@ -140,9 +141,9 @@ export default function MainContentCard({
 
   // Event handler for the checkboxes in step 3
   const handleAddonSelection = e => {
-    setPickAddOn(currAddOn => {
+    setPickAddOn(a => {
       return {
-        ...currAddOn,
+        ...a,
         [e.target.name]: {
           ...currAddOn[e.target.name],
           status: !pickAddOn[e.target.name].status,
@@ -157,7 +158,7 @@ export default function MainContentCard({
 
   // Event handler for change anchor element in step 4
   const handleClick = () => {
-    setCount(currCount => (currCount = 2));
+    setCount(c => (c = 2));
   };
   const inputAndSelection = [
     <Step1Form
@@ -178,10 +179,10 @@ export default function MainContentCard({
     />,
     <Step4Card
       total={total}
-      count={count}
       userPlan={userPlan}
       pickAddOn={pickAddOn}
       handleClick={handleClick}
+      userDetails={userDetails}
     />,
     <ThankYou />,
   ];

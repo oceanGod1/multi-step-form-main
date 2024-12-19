@@ -3,7 +3,7 @@ import { useState } from "react";
 
 // import every child component
 import SecondaryNavCard from "./SecondaryNavCard/SecondaryNavCard";
-import PrimaryNavCard from "./PrimaryNavCard/PrimaryNavCard";
+import PrimaryNavBar from "./PrimaryNavBar/PrimaryNavBar";
 import MainContentCard from "./MainContentCard/MainContentCard";
 
 // import the css file
@@ -16,14 +16,14 @@ export default function MotherCmp() {
     userPersonalInfo: {},
     userPlan: {},
     pickAddOn: {},
+    noPlanSelected: false,
   });
+  userDetails.noPlanSelected === undefined && console.log(userDetails);
 
   // destructure the neccessary useStates at the highest level
   const [count, setCount] = useState(1);
   const [isMonth, setIsMonth] = useState(true);
   const [step1Done, setStep1Done] = useState(false);
-
-  // PROIMARY NAVIGATION
 
   return (
     <main className="mother-cmp">
@@ -35,14 +35,16 @@ export default function MotherCmp() {
         isMonth={isMonth}
         setIsMonth={setIsMonth}
         setCount={setCount}
+        userDetails={userDetails}
       />
 
       {count <= 4 && (
-        <PrimaryNavCard
+        <PrimaryNavBar
           count={count}
           setCount={setCount}
           userDetails={userDetails}
           setStep1Done={setStep1Done}
+          setUserDetails={setUserDetails}
         />
       )}
     </main>

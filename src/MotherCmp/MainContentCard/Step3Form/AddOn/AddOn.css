@@ -5,8 +5,20 @@
   border: 1px solid;
   align-items: center;
   border-radius: 0.5rem;
+  transition: 0.3s;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: auto 1fr auto;
+}
+
+.add-on:hover {
+  display: relative;
+  transform: scale(1.01);
+  border-color: var(--color2);
+}
+
+.add-on:active {
+  display: relative;
+  transform: scale(0.99);
 }
 
 .add-on .pick-add-on {
